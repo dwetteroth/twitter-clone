@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input {
+    @apply border border-gray-300 rounded px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500;
+
+
+  }
+
+  div {
+    /* @apply break-all; */
+
+  }
+
+  h2 {
+    @apply break-all;
+  }
+}

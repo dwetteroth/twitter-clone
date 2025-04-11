@@ -6,8 +6,9 @@ class User < ApplicationRecord
   
   
   validates :username, presence: true, length: { maximum: 32 }
-  validates :password_digest, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }
   validates :email, presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, message: "is not a valid email" }
 
 
+  has_many :tweets
 end

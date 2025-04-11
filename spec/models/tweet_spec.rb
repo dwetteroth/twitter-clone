@@ -4,7 +4,9 @@ RSpec.describe Tweet, type: :model do
   describe "validations" do
     #Valid tweet - basic
     it "is valid with a user and a body under 280 chars" do 
-      user = User.create!(username: "test", email: "test@example.com", password_digest: "pass")
+      
+      user = User.create!(username: "test", email: "test@example.com", password: "12345678")
+
       tweet = Tweet.new(user: user, body: "This is a valid tweet.")
       expect(tweet).to be_valid
     end
@@ -23,5 +25,9 @@ RSpec.describe Tweet, type: :model do
       expect(tweet.errors[:body]).to include("is too long (maximum is 280 characters)")
     end
 
+  end
+
+  context '' do
+    
   end
 end
